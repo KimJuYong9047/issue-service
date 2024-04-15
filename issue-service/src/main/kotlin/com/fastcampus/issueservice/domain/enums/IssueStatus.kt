@@ -1,4 +1,4 @@
-package com.fastcampus.issueservice.domain
+package com.fastcampus.issueservice.domain.enums
 
 enum class IssueStatus {
     TODO, IN_PROGRESS, RESOLVED;

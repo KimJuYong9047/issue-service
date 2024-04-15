@@ -1,5 +1,8 @@
 package com.fastcampus.issueservice.domain
 
+import com.fastcampus.issueservice.domain.enums.IssuePriority
+import com.fastcampus.issueservice.domain.enums.IssueStatus
+import com.fastcampus.issueservice.domain.enums.IssueType
 import javax.persistence.*
 
 @Entity
@@ -10,10 +13,13 @@ class Issue (
     val id: Long? = null,
 
     @Column
-    val userId: Long,
+    var userId: Long,
+
+    @OneToMany(fetch = FetchType.EAGER)
+    var comments: MutableList<Comment> = mutableListOf(),
 
     @Column
-    val summary: String,
+    var summary: String,
 
     @Column
     var description: String,
